@@ -35,8 +35,6 @@ This repository includes the following:
 
 ### Citation
 
-## Acknowledgements
-Funding was provided by the Deutsche Forschungsgemeinschaft (DFG, project number [...]). We would like to acknowledge that the scientific research cooperation between King Abdulaziz University (KAU, Faculty of Marine Sciences (FMS), Jeddah, Saudi Arabia, and the Senckenberg, Research Institute (SRI), Frankfurt, Germany, in the framework of the Red Sea Biodiversity Project, during which parts of the present material were collected, was funded by KAU GRANT NO. I/1/432-DSR. The authors acknowledge, with thanks, KAU and SRI for technical and financial support. In particular, we would like to thank the Coastal and Marine Resources Core Lab (KAUST) and Mike Berumen for their help in the field. Furthermore, we would like to thank Kenneth Sandoval (National University of Ireland, Galway) and Ignite for providing us with transcriptomic data of haplosclerid sponges. Also, we would like to acknowledge Simone Schätzle, Gabi Büttner, Nora Dotzler, and Vani Tirumalasetty for their help and effort during laboratory work. Finally, we would like to thank Sebastian Hönha and Luiza Guimarães Fabreti for their help and insights into RevBayes and Bayesian inference.
 
 ### References
 Faircloth, B. C. (2016). PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics, 32(5), 786–788. doi: 10.1093/bioinformatics/btv646
