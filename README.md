@@ -32,7 +32,7 @@ This repository includes the following:
 * The parameters and settings for reconstructing the bayesian phylogenies using RevBayes (Höhna et al. 2016)
 
 ### Citation
-
+[insert here ...]
 
 ### References
 Faircloth, B. C. (2016). PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics, 32(5), 786–788. doi: 10.1093/bioinformatics/btv646
