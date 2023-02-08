@@ -31,8 +31,6 @@ This repository includes the following:
 * The parameters and settings for reconstructing the ML phylogenies using RAxML (Stamatakis, 2014)
 * The parameters and settings for reconstructing the bayesian phylogenies using RevBayes (Höhna et al. 2016)
 
-## Publication
-
 ### Citation
 
 
