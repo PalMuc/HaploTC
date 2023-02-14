@@ -44,3 +44,6 @@ Höhna, S., Landis, M. J., Heath, T. A., Boussau, B., Lartillot, N., Moore, B. R
 Stamatakis, A. (2014). RAxML version 8: A tool for phylogenetic analysis and post-analysis of large phylogenies. Bioinformatics, 30(9), 1312–1313. doi: 10.1093/bioinformatics/btu033
 
 Rivera-Vicéns, R. E., Garcia Escudero, C., Conci, N., Eitel, M., & Wörheide, G. (2022). TransPi – a comprehensive TRanscriptome ANalysiS PIpeline for de novo transcriptome assembly. Molecular Ecology Resources. doi: 10.1111/1755-0998.13593
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
