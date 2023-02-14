@@ -1,0 +1,26 @@
+Haplosclerids
+
+AMQU = Amphimedon queenslandica
+HCIN = Haliclona (Reniera) cinerea
+HIND = Haliclona (Rhizoniera) indistincta
+HOCU = Haliclona (Haliclona) oculata
+HSIM = Haliclona (Haliclona) simulans
+HTUB = Haliclona (Reniera) tubifera
+HVIS = Haliclona (Rhizoniera) viscosa
+NCOM = Neopetrosia compacta
+
+
+
+Other demosponges (outgroups)
+
+CELE = Crella (Crella) elegans
+GATL = Geodia atlantica
+LAPI = Lantrunculia (Lantrunculia) apicalis
+LCHO = Lendenfeldia chondrodes
+MPHY = Mycale (Carmia) phylliphila
+PFOL = Phyllospongia folioscens
+PSPI = Pleraplysilla spinifera
+SCSP = Scopalina sp.
+TANH = Tedania (Tedania) anhelens
+TWIL = Tethya wilhelma
+VASP = Vaceletia sp.
