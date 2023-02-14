@@ -3,7 +3,6 @@
 Settings used for the programs and Python script for our bait set design following the online tutorial of PHYLUCE IV:
 https://phyluce.readthedocs.io/en/latest/tutorials/tutorial-4.html (Faircloth, 2012; Faircloth et al., 2016)
 
-#### Transcriptome data used:
 Transcriptome data used for bait design can be found back in the folder 'transcriptomes_baitdesign'.
 
 This folder contains two subfolders:
@@ -43,22 +42,22 @@ The 'transcriptomes' folder contains all the transcriptomes necessary for a part
 ### CLEANUP THE TRANSCRIPTOMES
 Raw data was collected of the species used during bait design, and cleaned, assembled and checked for quality using TransPi: https://github.com/PalMuc/TransPi (Rivera-Vicéns et al. 2021)
 
-#### Put transcriptomes in their own directories
+Put transcriptomes in their own directories
 
 ```python
 > cd uce-haplosclerida/transcriptomes
 > for critter in *; do mkdir ${critter%.*}; mv $critter ${critter%.*}; done
 ```
 
-#### Convert transcriptome to 2bit format
+Convert transcriptome to 2bit format
 
 ```python
 > for critter in *; do faToTwoBit $critter/$critter.fasta $critter/${critter%.*}.2bit; done
 ```
 
-#### Simulate reads from transcriptomes
+Simulate reads from transcriptomes
 
-Install 'Art' Package (Huang et al. 2012)
+* Install 'Art' Package (Huang et al. 2012)
 
 ```python
 > conda install -c bioconda art
@@ -79,7 +78,8 @@ Install 'Art' Package (Huang et al. 2012)
 > art_illumina --paired --in ../transcriptomes/NCOM/NCOM.fasta --out AMQU-pe100-reads --len 100 --fcov 2 --mflen 200 --sdev 150 -ir 0.0 -ir2 0.0 -dr 0.0 -dr2 0.0 -qs 100 -qs2 100 -na
 ```
 
-#### Merging reads together
+Merging reads together
+
 ```python
 > for critter in AMQU HCIN HIND HOCU HSIM HTUB HVIS NCOM;
 do
@@ -123,14 +123,14 @@ Prepare AMQU transcriptome for use, with stampy (Lunter & Goodson, 2011)
 > python2 ../stampy-1.0.32/stampy.py -g AMQU -H AMQU
 ```
 
-#### Align reads to base transcriptome
+Align reads to base transcriptome
 
 ```python
 > cd uce-haplosclerida
 > mkdir alignments
 ```
 
-#### Perform alignments (taxon-by-taxon)
+Perform alignments (taxon-by-taxon)
 
 * Substitutionrate = 0.05 (sequence divergence <5%)
 
@@ -149,7 +149,7 @@ do
 done;
 ```
 
-#### Remove unmapped reads
+Remove unmapped reads
 
 ```python
 > cd uce-haplosclerida
