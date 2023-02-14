@@ -210,6 +210,30 @@ Remove repetitive intervals
 > for i in *.sort.merge.bed; do phyluce_probe_strip_masked_loci_from_set --bed $i --twobit ../transcriptomes/AMQU/AMQU.2bit --output ${i%.*}.strip.bed --filter-mask 0.25 --min-length 80; done;
 ```
 
+Determining locus presence in multiple transcriptomes
+* create a configuration file > bed-files.conf
+
+```python
+[beds]
+HIND:HIND-to-AMQU-MAPPING.bam.sort.merge.strip.bed
+HOCU:HOCU-to-AMQU-MAPPING.bam.sort.merge.strip.bed
+HCIN:HCIN-to-AMQU-MAPPING.bam.sort.merge.strip.bed
+HTUB:HTUB-to-AMQU-MAPPING.bam.sort.merge.strip.bed
+HVIS:HVIS-to-AMQU-MAPPING.bam.sort.merge.strip.bed
+HSIM:HSIM-to-AMQU-MAPPING.bam.sort.merge.strip.bed
+NCOM:NCOM-to-AMQU-MAPPING.bam.sort.merge.strip.bed
+```
+
+Create record of alignment intervals shared among taxa
+
+```python
+> phyluce_probe_get_multi_merge_table \
+  --conf bed-files.conf \
+  --base-taxon AMQU \
+  --output Haplosclerida-to-AMQU.sqlite
+```
+
+
 
 ## References
 Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics 32:786-788. doi:10.1093/bioinformatics/btv646.
