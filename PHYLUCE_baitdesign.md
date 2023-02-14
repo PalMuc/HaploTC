@@ -233,7 +233,34 @@ Create record of alignment intervals shared among taxa
   --output Haplosclerida-to-AMQU.sqlite
 ```
 
+Table output
 
+```python
+> sqlite3 Haplosclerida-to-AMQU.sqlite
+> .tables
+> select * from AMQU limit 10;
+```
+
+Determining shared, conserved loci
+
+* query the number of shared loci by the base transcriptome and the other exemplar taxa
+* the results are documented in Table S3
+
+```python
+> phyluce_probe_query_multi_merge_table \
+  --db Haplosclerida-to-AMQU.sqlite \
+  --base-taxon AMQU
+```
+
+Here we selected those loci being shared between base transcriptome and all other exemplar taxa (n = 7)
+
+```python
+> phyluce_probe_query_multi_merge_table \
+  --db Haplosclerida-to-AMQU.sqlite \
+  --base-taxon AMQU \
+  --output AMQU+7.bed \
+  --specific-counts 7
+```
 
 ## References
 Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics 32:786-788. doi:10.1093/bioinformatics/btv646.
