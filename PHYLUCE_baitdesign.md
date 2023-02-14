@@ -340,6 +340,156 @@ Align temporary sequences to each transcriptome
 The temporary bait set ('x' number of baits, targeting a 'x' number of loci) is here aligned back to AMQU and the 7 exemplar taxa, with an identity value of 70%. This is the minimum sequence identity for which a bait could be an accepted match to the transcriptome + a minimum coverage of 83% (Quattrini et al. 2018).
 
 
+Extract- sequence around conserved loci from exemplar transcriptomes
+
+* create configuration file 'haplosclerida-transcriptome.conf'
+
+```python
+[scaffolds]
+NCOM:../transcriptomes/NCOM/NCOM.2bit
+HIND:../transcriptomes/HIND/HIND.2bit
+HCIN:../transcriptomes/HCIN/HCIN.2bit
+HOCU:../transcriptomes/HOCU/HOCU.2bit
+HVIS:../transcriptomes/HVIS/HVIS.2bit
+HSIM:../transcriptomes/HSIM/HSIM.2bit
+HTUB:../transcriptomes/HTUB/HTUB.2bit
+AMQU:../transcriptomes/AMQU/AMQU.2bit
+```
+
+```python
+> phyluce_probe_slice_sequence_from_genomes \
+  --conf haplosclerida-transcriptome.conf \
+  --lastz haplosclerida-transcriptome-lastz \
+  --probes 140 \
+  --name-pattern "AMQU+7.temp-DUPE-SCREENED.probes_v_{}.lastz.clean" \
+  --output haplosclerida-transcriptome-fasta
+```
+
+Exploring fasta files
+
+```python
+> less probe-design/haplosclerida-transcriptome-fasta/AMQU.fasta
+```
+
+Find consistently detected loci
+
+```python
+> phyluce_probe_get_multi_fasta_table \
+	--fastas ../uce-haplosclerida/probe-design/haplosclerida-transcriptome-fasta \
+	--output multifastas.sqlite \
+	--base-taxon AMQU
+```
+
+Visualize table: shows detection of conserved loci in each of the exemplar taxa
+
+```python
+> sqlite3 multifastas.sqlite
+> sqlite > select * from AMQU limit 10;
+```
+
+Detection shared loci (after cleaning) > results can be found in Table S3
+
+```python
+> phyluce_probe_query_multi_fasta_table \
+  --db multifastas.sqlite \
+  --base-taxon AMQU
+```
+
+Extract conserved loci
+
+```python
+> phyluce_probe_query_multi_fasta_table \
+	--db multifastas.sqlite \
+	--base-taxon AMQU \
+	--output AMQU+7-back-to-7.conf \
+	--specific-counts 7
+```
+
+
+### FINAL BAIT SET DESIGN
+
+Bait set design + all exemplar transcriptomes (and base transcriptome)
+
+```python
+> phyluce_probe_get_tiled_probe_from_multiple_inputs \
+	--fastas haplosclerida-transcriptome-fasta \
+	--multi-fasta-output AMQU+7-back-to-7.conf \
+	--probe-prefix "uce-" \
+	--probe-length 80 \
+	--designer vandersprong \
+	--design haplosclerida-v50 \
+	--tiling-density 2 \
+	--overlap middle \
+	--masking 0.25 \
+	--remove-gc \
+	--two-probes \
+	--output haplosclerida-v50-amqu-master-probe-list.fasta
+```
+
+Remove duplicates from bait set
+
+```python
+> phyluce_probe_easy_lastz \
+	--target haplosclerida-v50-amqu-master-probe-list.fasta \
+	--query haplosclerida-v50-amqu-master-probe-list.fasta \
+	--identity 50 \
+	--coverage 50 \
+	--output haplosclerida-v50-amqu-master-probe-list-TO-SELF-PROBES.lastz
+```
+
+Filtering for duplicate loci
+
+```python
+> phyluce_probe_remove_duplicate_hits_from_probes_using_lastz \
+	--fasta haplosclerida-v50-amqu-master-probe-list.fasta \
+	--lastz haplosclerida-v50-amqu-master-probe-list-TO-SELF-PROBES.lastz \
+	--probe-prefix=uce-
+```
+
+After this step, a new file has been generated: 'haplosclerida-v50-amqu-master-probe-list-DUPE-SCREENED.fasta'
+
+## Notes
+
+The different steps as described above were repeated for every bait set (n = 137).
+
+* using different species as base transcriptome
+* using different levels of stringency
+* using the haplosclerids + one demosponge as outgroup
+
+
+To keep track of the probes designed by a specific bait set (and avoid different probes having similar name-codes), we gave every UCE a unique code:
+* starting with the version number (in this case, the UCEs designed with v50 will start with '50')
+* followed by three '000'
+* followed by the UCE number resulting from the PHYLUCE workflow
+
+```python
+> sed -e 's/uce-/uce-[insert-unique-nr]/g' <input.fasta > output.fasta
+```
+
+Once the probes/baits have their unique codes, we compiled the different sets together in a (step-wise).
+
+* we started with concatenating the bait sets
+* then we re-ran the program for removing duplicates
+
+```python
+> phyluce_probe_easy_lastz \
+	--target haplosclerida-master-probe-list-concat-1.fasta \
+	--query haplosclerida-master-probe-list-concat-1.fasta \
+	--identity 50 \
+	--coverage 50 \
+	--output haplosclerida-master-probe-list-concat-1-TO-SELF-PROBES.lastz
+```
+
+```python
+> phyluce_probe_remove_duplicate_hits_from_probes_using_lastz \
+	--fasta haplosclerida-master-probe-list-concat-1.fasta \
+	--lastz haplosclerida-master-probe-list-concat-1-TO-SELF-PROBES.lastz \
+	--probe-prefix=uce-
+```
+
+After this step, we again had a new master probe list filtered of putatively duplicate loci: 'haplosclerida-master-probe-list-concat-1-DUPE-SCREENED.fasta'
+
+
 
 ## References
 Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics 32:786-788. doi:10.1093/bioinformatics/btv646.
