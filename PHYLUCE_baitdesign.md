@@ -79,6 +79,20 @@ Install 'Art' Package (Huang et al. 2012)
 > art_illumina --paired --in ../transcriptomes/NCOM/NCOM.fasta --out AMQU-pe100-reads --len 100 --fcov 2 --mflen 200 --sdev 150 -ir 0.0 -ir2 0.0 -dr 0.0 -dr2 0.0 -qs 100 -qs2 100 -na
 ```
 
+#### Merging reads together
+```python
+> for critter in AMQU HCIN HIND HOCU HSIM HTUB HVIS NCOM;
+		do
+			echo "working on $critter";
+			touch $critter-pe100-reads.fq;
+			cat $critter-pe100-reads1.fq > $critter-pe100-reads.fq;
+			cat $critter-pe100-reads2.fq >> $critter-pe100-reads.fq;
+			rm $critter-pe100-reads1.fq;
+			rm $critter-pe100-reads2.fq;
+			gzip $critter-pe100-reads.fq;
+		done;
+```
+
 ## References
 Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics 32:786-788. doi:10.1093/bioinformatics/btv646.
 
