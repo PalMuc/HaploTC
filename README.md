@@ -24,7 +24,7 @@ This repository includes the following:
 
 * The parameters and settings used for bait design (PHYLUCE Tutorial IV) (Faircloth et al. 2012; Faircloth, 2016)
 * Transcriptomic data (assemblies) used for bait design (assembled using TransPi; Rivera-Vicéns et al. 2022)
-* The MSDA bait set (20,000 probes)
+* The MSDA bait set (20,000 probes): 'uce-20k-probes.fasta'
 * Phylip-file used for the Maximum Likelihood (ML) full length 18S phylogeny using RAxML (Stamatakis, 2014)
 * The parameters and settings for the in-silico test (PHYLUCE Tutorial I) (Faircloth et al. 2012; Faircloth, 2016)
 * Assemblies of the Red Sea haplosclerids
