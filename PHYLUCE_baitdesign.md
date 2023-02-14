@@ -86,7 +86,7 @@ Faircloth BC, McCormack JE, Crawford NG, Harvey MG, Brumfield RT, Glenn TC. 2012
 
 Huang, W., Li, L., Myers, J. R., & Marth, G. T. (2012). ART: a next-generation sequencing read simulator. Bioinformatics, 28(4), 593–594.
 
-Rivera-Vicéns RE, García-Escudero CA, Conci N, Eitel M, Wörheide G. 2021. TransPi–a comprehensive TRanscriptome ANalysiS PIpeline for de novo transcriptome assembly. bioRxiv 2021.02.18.431773; doi: https://doi.org/10.1101/2021.02.18.431773
+Rivera-Vicéns RE, García-Escudero CA, Conci N, Eitel M, Wörheide G. 2021. TransPi–a comprehensive TRanscriptome ANalysiS PIpeline for de novo transcriptome assembly. bioRxiv 2021.02.18.431773; doi:10.1101/2021.02.18.431773
 
 
 
