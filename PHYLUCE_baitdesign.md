@@ -262,6 +262,85 @@ Here we selected those loci being shared between base transcriptome and all othe
   --specific-counts 7
 ```
 
+### CONSERVED LOCUS VALIDATION
+
+Extract fasta sequence from base transcriptome for temporary bait design
+
+```python
+> phyluce_probe_get_genome_sequences_from_bed \
+	--bed AMQU+7.bed \
+	--twobit ../transcriptomes/AMQU/AMQU.2bit \
+	--buffer-to 120 \
+	--output AMQU+7.fasta
+```
+
+Design duplicated temporary bait set
+
+```python
+> phyluce_probe_get_tiled_probes \
+	--input AMQU+7.fasta \
+	--probe-length 80 \
+	--probe-prefix "uce-" \
+	--design Haplosclerida-v50 \
+	--designer vandersprong \
+	--tiling-density 2 \
+	--two-probes \
+	--overlap middle \
+	--masking 0.25 \
+	--remove-gc \
+	--output AMQU+7.temp.probes
+```
+
+Remove duplicated temporary bait set
+
+```python
+> phyluce_probe_easy_lastz \
+  --target AMQU+7.temp.probes \
+  --query AMQU+7.temp.probes \
+  --identity 50 \
+  --coverage 50 \
+  --output AMQU+7.temp.probes-TO-SELF-PROBES.lastz 
+```
+
+Screen alignments + remove duplicate baits
+
+```python
+> phyluce_probe_remove_duplicate_hits_from_probes_using_lastz \
+	--fasta AMQU+7.temp.probes \
+	--lastz AMQU+7.temp.probes-TO-SELF-PROBES.lastz \
+	--probe-prefix=uce- 
+```
+
+Align baits against exemplar transcriptomes
+
+* using a duplicate-free (or putatively duplicate free) set of temporary baits designed from conserved loci in the base transcriptome
+* how 'sticky' are the designed baits when they are used to enrich loci across divergent groups?
+
+```python
+> cd uce-haplosclerida
+> mkdir probe-design
+> cd probe-design 
+```
+
+Align temporary sequences to each transcriptome
+
+```python
+> mkdir haplosclerida-transcriptome-lastz
+
+> phyluce_probe_run_multiple_lastzs_sqlite \
+	--probefile ../bed/AMQU+7.temp-DUPE-SCREENED.probes \
+	--scaffoldlist NCOM HCIN HIND HOCU HSIM HTUB HVIS \
+	--genome-base-path ../transcriptomes \
+	--identity 70 \
+	--cores 4 \
+	--db AMQU+7.sqlite \
+	--output haplosclerida-transcriptome-lastz
+```
+
+The temporary bait set ('x' number of baits, targeting a 'x' number of loci) is here aligned back to AMQU and the 7 exemplar taxa, with an identity value of 70%. This is the minimum sequence identity for which a bait could be an accepted match to the transcriptome + a minimum coverage of 83% (Quattrini et al. 2018).
+
+
+
 ## References
 Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics 32:786-788. doi:10.1093/bioinformatics/btv646.
 
@@ -270,6 +349,8 @@ Faircloth BC, McCormack JE, Crawford NG, Harvey MG, Brumfield RT, Glenn TC. 2012
 Huang, W., Li, L., Myers, J. R., & Marth, G. T. (2012). ART: a next-generation sequencing read simulator. Bioinformatics, 28(4), 593–594.
 
 Lunter, G., & Goodson, M. (2011). Stampy: a statistical algorithm for sensitive and fast mapping of Illumina sequence reads. Genome Research, 21(6), 936–939. doi:10.1101/gr.111120.110
+
+Quattrini, A. M., Faircloth, B. C., Dueñas, L. F., Bridge, T. C. L., Brugler, M. R., Calixto-Botía, I. F., … McFadden, C. S. (2018). Universal target-enrichment baits for anthozoan (Cnidaria) phylogenomics: new approaches to long-standing problems. Molecular Ecology Resources, 18(2), 281–295. doi: 10.1111/1755-0998.12736
 
 Rivera-Vicéns RE, García-Escudero CA, Conci N, Eitel M, Wörheide G. 2021. TransPi–a comprehensive TRanscriptome ANalysiS PIpeline for de novo transcriptome assembly. bioRxiv 2021.02.18.431773; doi:10.1101/2021.02.18.431773
 
