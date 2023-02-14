@@ -44,3 +44,16 @@ The 'transcriptomes' folder contains all the transcriptomes necessary for a part
 * HTUB = Haliclona (Reniera) tubifera
 * HVIS = Haliclona (Rhizoniera) viscosa
 * NCOM = Neopetrosia compacta
+
+### CLEANUP THE TRANSCRIPTOMES
+raw data was collected of the species used during bait design, and cleaned, assembled and checked for quality using TransPi: https://github.com/PalMuc/TransPi
+
+#### Reference
+Rivera-Vicéns RE, García-Escudero CA, Conci N, Eitel M, Wörheide G. 2021. TransPi–a comprehensive TRanscriptome ANalysiS PIpeline for de novo transcriptome assembly. bioRxiv 2021.02.18.431773; doi: https://doi.org/10.1101/2021.02.18.431773
+
+#### Put transcriptomes in their own directories
+
+```python
+> cd uce-haplosclerida/transcriptomes
+> for critter in *; do mkdir ${critter%.*}; mv $critter ${critter%.*}; done
+```
