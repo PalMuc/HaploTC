@@ -25,3 +25,23 @@ A list with the abbreviations can be found in a separate text document.
 > mkdir uce-haplosclerida
 > cd uce-haplosclerida
 ```
+
+### DATA AND PREPARATION
+
+```python
+> mkdir transcriptomes
+> cd transcriptomes
+```
+
+The 'transcriptomes' folder contains all the transcriptomes necessary for a particular bait set (see Table S3 for an overview). For simplicity, we outline bait set version 50 (haplo-only, with Amphimedon queenslandica (AMQU) as base transcriptome) here.
+
+#### Haplosclerid transcriptomes:
+
+AMQU = Amphimedon queenslandica
+HCIN = Haliclona (Reniera) cinerea
+HIND = Haliclona (Rhizoniera) indistincta
+HOCU = Haliclona (Haliclona) oculata
+HSIM = Haliclona (Haliclona) simulans
+HTUB = Haliclona (Reniera) tubifera
+HVIS = Haliclona (Rhizoniera) viscosa
+NCOM = Neopetrosia compacta
