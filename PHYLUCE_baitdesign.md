@@ -13,12 +13,15 @@ A list with the abbreviations can be found in a separate text document.
 
 ## Tutorial IV: Identifying UCE loci and designing baits to target them
 
+
+
 ### STARTING DIRECTORY STRUCTURE
 
 ```python
 > mkdir uce-haplosclerida
 > cd uce-haplosclerida
 ```
+
 
 ### DATA AND PREPARATION
 
@@ -29,6 +32,7 @@ A list with the abbreviations can be found in a separate text document.
 
 The 'transcriptomes' folder contains all the transcriptomes necessary for a particular bait set (see Table S3 for an overview). For simplicity, we outline bait set version 50 (haplo-only, with Amphimedon queenslandica (AMQU) as base transcriptome) here.
 
+
 #### Haplosclerid transcriptomes:
 * AMQU = Amphimedon queenslandica
 * HCIN = Haliclona (Reniera) cinerea
@@ -38,6 +42,7 @@ The 'transcriptomes' folder contains all the transcriptomes necessary for a part
 * HTUB = Haliclona (Reniera) tubifera
 * HVIS = Haliclona (Rhizoniera) viscosa
 * NCOM = Neopetrosia compacta
+
 
 ### CLEANUP THE TRANSCRIPTOMES
 Raw data was collected of the species used during bait design, and cleaned, assembled and checked for quality using TransPi: https://github.com/PalMuc/TransPi (Rivera-Vicéns et al. 2021)
@@ -92,6 +97,7 @@ do
 	gzip $critter-pe100-reads.fq;
 done;
 ```
+
 
 ### READ ALIGNMENT TO THE BASE TRANSCRIPTOME
 
@@ -164,10 +170,45 @@ do
 done;
 ```
 
+
 ### CONSERVED LOCI IDENTIFICATION
 
+Convert BAMS to BEDS
 
+```python
+> cd uce-haplosclerida
+> mkdir bed
+> cd bed
 
+> for i in ../alignments/all/*.bam; do echo $i; bedtools bamtobed -i $i -bed12 > `basename $i`.bed; done
+```
+
+Sort the converted BEDS
+
+```python
+> for i in *.bed; do echo $i; bedtools sort -i $i > ${i%.*}.sort.bed; done
+```
+
+Merge (nearly) overlapping intervals
+
+```python
+> for i in *.bam.sort.bed; do echo $i; bedtools merge -i $i > ${i%.*}.merge.bed; done
+```
+
+Total N of merged, putatively conserved regions in each exemplar taxon shared with the base transcriptome
+
+```python
+> for i in *.bam.sort.merge.bed; do wc -l $i; done
+```
+
+Remove repetitive intervals
+
+* base genome shorter than 80-bp
+* where more than 25% of the base transcriptome is masked
+
+```python
+> for i in *.sort.merge.bed; do phyluce_probe_strip_masked_loci_from_set --bed $i --twobit ../transcriptomes/AMQU/AMQU.2bit --output ${i%.*}.strip.bed --filter-mask 0.25 --min-length 80; done;
+```
 
 
 ## References
