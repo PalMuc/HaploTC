@@ -27,6 +27,7 @@ This repository includes the following:
 * The MSDA bait set (20,000 probes): *uce-20k-probes.fasta*
 * Folder with all the information to (re)create the Maximum Likelihood (ML) full length 18S phylogeny using RAxML<sup>d,e</sup>: *18S_Redmond_phylogeny* 
 * The parameters and settings for the in-silico test (PHYLUCE Tutorial I) <sup>a,b</sup>
+* Folder with additional transcriptome data for insilico test: *insilicotest_transcriptomes*
 * Assemblies of the Red Sea haplosclerids: *assemblies_redsea_haplosclerids*
 * The parameters and settings for reconstructing the ML phylogenies using RAxML <sup>d</sup>
 * The parameters and settings for reconstructing the bayesian phylogenies using RevBayes <sup>f</sup>
