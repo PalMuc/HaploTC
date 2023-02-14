@@ -109,12 +109,28 @@ Copy base transcriptome to base-directory
 > cp -p ../transcriptomes/AMQU/AMQU.fasta ./
 ```
 
+Prepare AMQU transcriptome for use, with stampy (Lunter & Goodson, 2011)
+
+* Install package 'Stampy v.1.0.32'
+
+```python
+> make python=python2.7
+
+> cd uce-haplosclerida
+> cd base
+
+> python2 ../stampy-1.0.32/stampy.py --species="Amphimedon queenslandica" --assembly="AMQU" -G AMQU AMQU.fasta
+> python2 ../stampy-1.0.32/stampy.py -g AMQU -H AMQU
+```
+
 ## References
 Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics 32:786-788. doi:10.1093/bioinformatics/btv646.
 
 Faircloth BC, McCormack JE, Crawford NG, Harvey MG, Brumfield RT, Glenn TC. 2012. Ultraconserved elements anchor thousands of genetic markers spanning multiple evolutionary timescales. Systematic Biology 61: 717–726. doi:10.1093/sysbio/SYS004.
 
 Huang, W., Li, L., Myers, J. R., & Marth, G. T. (2012). ART: a next-generation sequencing read simulator. Bioinformatics, 28(4), 593–594.
+
+Lunter, G., & Goodson, M. (2011). Stampy: a statistical algorithm for sensitive and fast mapping of Illumina sequence reads. Genome Research, 21(6), 936–939. doi:10.1101/gr.111120.110
 
 Rivera-Vicéns RE, García-Escudero CA, Conci N, Eitel M, Wörheide G. 2021. TransPi–a comprehensive TRanscriptome ANalysiS PIpeline for de novo transcriptome assembly. bioRxiv 2021.02.18.431773; doi:10.1101/2021.02.18.431773
 
