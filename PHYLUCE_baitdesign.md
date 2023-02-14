@@ -123,7 +123,7 @@ Prepare AMQU transcriptome for use, with stampy (Lunter & Goodson, 2011)
 > python2 ../stampy-1.0.32/stampy.py -g AMQU -H AMQU
 ```
 
-### ALIGN READS TO BASE TRANSCRIPTOME
+#### Align reads to base transcriptome
 
 ```python
 > cd uce-haplosclerida
@@ -148,6 +148,26 @@ do
  ../../reads/$reads | samtools view -Sb - > $critter-to-$base.bam;     
 done;
 ```
+
+#### Remove unmapped reads
+
+```python
+> cd uce-haplosclerida
+> cd alignments
+> mkdir all
+
+> for critter in NCOM HCIN HIND HOCU HSIM HVIS HTUB;
+do
+ samtools view -h -F 4 -b $critter/$critter-to-AMQU.bam > $critter/$critter-to-AMQU-MAPPING.bam;
+ rm $critter/$critter-to-AMQU.bam;
+ ln -s ../$critter/$critter-to-AMQU-MAPPING.bam all/$critter-to-AMQU-MAPPING.bam;
+done;
+```
+
+### CONSERVED LOCI IDENTIFICATION
+
+
+
 
 
 ## References
