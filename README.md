@@ -1,20 +1,20 @@
 # Genome-wide Loci Marine Haplosclerids
 
-Joëlle van der Sprong 1§; Nicole J. de Voogd 2,3; Grace P. McCormack 4; Oliver Voigt 1; Dirk Erpenbeck 1,5; Gert Wörheide 1,5,6 ; Sergio Vargas 1§
+Joëlle van der Sprong <sup>1§</sup>; Nicole J. de Voogd <sup>2,3</sup>; Grace P. McCormack <sup>4</sup>; Oliver Voigt <sup>1</sup>; Dirk Erpenbeck <sup>1,5</sup>; Gert Wörheide <sup>1,5,6</sup>; Sergio Vargas <sup>1§</sup>
 
-1 Department of Earth and Environmental Sciences, Palaeontology and Geobiology, Ludwig-Maximilians-Universität München, Munich, Germany
+<sup>1</sup> Department of Earth and Environmental Sciences, Palaeontology and Geobiology, Ludwig-Maximilians-Universität München, Munich, Germany
 
-2 Naturalis Biodiversity Center, Leiden, The Netherlands
+<sup>2</sup> Naturalis Biodiversity Center, Leiden, The Netherlands
 
-3 Institute of Environmental Sciences, Universiteit Leiden, Leiden, The Netherlands
+<sup>3</sup> Institute of Environmental Sciences, Universiteit Leiden, Leiden, The Netherlands
 
-4 Molecular Evolution and Systematics Laboratory, MRI, Zoology Department, National University of Ireland Galway, Galway, Ireland
+<sup>4</sup> Molecular Evolution and Systematics Laboratory, MRI, Zoology Department, National University of Ireland Galway, Galway, Ireland
 
-5 GeoBio-Center, Ludwig-Maximilians-Universität München, Munich, Germany
+<sup>5</sup> GeoBio-Center, Ludwig-Maximilians-Universität München, Munich, Germany
 
-6 Bavarian State Collections of Palaeontology and Geology, Munich, Germany
+<sup>6</sup> Bavarian State Collections of Palaeontology and Geology, Munich, Germany
 
-§ corresponding authors: j.sprong@lmu.de & s.vargas@lmu.de
+<sup>§</sup> corresponding authors: j.sprong@lmu.de & s.vargas@lmu.de
 
 ## Abstract
 [insert here ...]
@@ -27,7 +27,7 @@ This repository includes the following:
 * The MSDA bait set (20,000 probes): 'uce-20k-probes.fasta'
 * Folder with all the information to (re)create the Maximum Likelihood (ML) full length 18S phylogeny using RAxML: '18S_Redmond_phylogeny'
 * The parameters and settings for the in-silico test (PHYLUCE Tutorial I)
-* Assemblies of the Red Sea haplosclerids
+* Assemblies of the Red Sea haplosclerid
 * The parameters and settings for reconstructing the ML phylogenies using RAxML
 * The parameters and settings for reconstructing the bayesian phylogenies using RevBayes
 
