@@ -123,6 +123,33 @@ Prepare AMQU transcriptome for use, with stampy (Lunter & Goodson, 2011)
 > python2 ../stampy-1.0.32/stampy.py -g AMQU -H AMQU
 ```
 
+### ALIGN READS TO BASE TRANSCRIPTOME
+
+```python
+> cd uce-haplosclerida
+> mkdir alignments
+```
+
+#### Perform alignments (taxon-by-taxon)
+
+* Substitutionrate = 0.05 (sequence divergence <5%)
+
+```python
+> export cores=4
+> export base=AMQU
+> export base_dir=../uce-haplosclerida/alignments
+for critter in HCIN HIND HOCU HSIM HTUB HVIS NCOM;     
+do         
+ export reads=$critter-pe100-reads.fq.gz;         
+ mkdir -p $base_dir/$critter;         
+ cd $base_dir/$critter;
+ python2 ../stampy-1.0.32/stampy.py --maxbasequal 93 -g ../../base/$base -h ../../base/$base \
+ --substitutionrate=0.05 -t$cores --insertsize=400 -M \
+ ../../reads/$reads | samtools view -Sb - > $critter-to-$base.bam;     
+done;
+```
+
+
 ## References
 Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics 32:786-788. doi:10.1093/bioinformatics/btv646.
 
