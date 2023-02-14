@@ -9,7 +9,7 @@ Faircloth BC. 2016. PHYLUCE is a software package for the analysis of conserved 
 Faircloth BC, McCormack JE, Crawford NG, Harvey MG, Brumfield RT, Glenn TC. 2012. Ultraconserved elements anchor thousands of genetic markers spanning multiple evolutionary timescales. Systematic Biology 61: 717–726. doi:10.1093/sysbio/SYS004.
 
 #### Transcriptome data used:
-Transcriptome data used for bait design can be found back in the folder 'transcriptomes_baitdesing'.
+Transcriptome data used for bait design can be found back in the folder 'transcriptomes_baitdesign'.
 
 This folder contains two subfolders:
 * transcriptomes_haplosclerids
@@ -17,3 +17,11 @@ This folder contains two subfolders:
 
 A list with the abbreviations can be found in a separate text document.
 
+## Tutorial IV: Identifying UCE loci and designing baits to target them
+
+#### Starting directory structure
+
+```python
+> mkdir uce-haplosclerida
+> cd uce-haplosclerida
+```
