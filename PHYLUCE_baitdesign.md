@@ -82,15 +82,31 @@ Install 'Art' Package (Huang et al. 2012)
 #### Merging reads together
 ```python
 > for critter in AMQU HCIN HIND HOCU HSIM HTUB HVIS NCOM;
-		do
-			echo "working on $critter";
-			touch $critter-pe100-reads.fq;
-			cat $critter-pe100-reads1.fq > $critter-pe100-reads.fq;
-			cat $critter-pe100-reads2.fq >> $critter-pe100-reads.fq;
-			rm $critter-pe100-reads1.fq;
-			rm $critter-pe100-reads2.fq;
-			gzip $critter-pe100-reads.fq;
-		done;
+do
+	echo "working on $critter";
+	touch $critter-pe100-reads.fq;
+	cat $critter-pe100-reads1.fq > $critter-pe100-reads.fq;
+	cat $critter-pe100-reads2.fq >> $critter-pe100-reads.fq;
+	rm $critter-pe100-reads1.fq;
+	rm $critter-pe100-reads2.fq;
+	gzip $critter-pe100-reads.fq;
+done;
+```
+
+### READ ALIGNMENT TO THE BASE TRANSCRIPTOME
+
+Prepare the base transcriptome
+
+```python
+> cd uce-haplosclerida
+> mkdir base
+> cd base
+```
+
+Copy base transcriptome to base-directory
+
+```python
+> cp -p ../transcriptomes/AMQU/AMQU.fasta ./
 ```
 
 ## References
