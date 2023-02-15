@@ -26,6 +26,60 @@ Open conda environment:
 > mkdir fastas
 ```´
 
+### FINDING UCE LOCI
+
+```python
+> phyluce_assembly_match_contigs_to_probes \
+  --contigs fastas \
+  --probes uce-20k-probes.fasta \
+  --output uce-search-results \
+	--min-identity 85 \
+	--min-coverage 85
+```´
+
+The output of this file can be found back under 'data_insilico_test/phyluce_assembly_match_contigs_to_probes.log'
+
+### EXTRACTING UCE LOCI
+
+Create a configuration file that lists all the transcriptomes used for the in-silico test: 'taxon-set.conf'
+
+```python
+[all]
+AAPS
+AMQU
+CELE
+CVAR
+etc.
+```´
+
+```python
+> cd in-silico-test
+> mkdir -p taxon-sets/all
+
+> phyluce_assembly_get_match_counts \
+  --locus-db uce-search-results/probe.matches.sqlite \
+  --taxon-list-config taxon-set.conf \
+  --taxon-group 'all' \
+  --incomplete-matrix \
+  --output taxon-sets/all/all-taxa-incomplete.conf
+
+> cd taxon-sets/all
+> mkdir log
+
+> phyluce_assembly_get_fastas_from_match_counts \
+  --contigs ../../fastas \
+  --locus-db ../../uce-search-results/probe.matches.sqlite \
+  --match-count-output all-taxa-incomplete.conf \
+  --output all-taxa-incomplete.fasta \
+  --incomplete-matrix all-taxa-incomplete.incomplete \
+  --log-path log
+```´
+
+
+
+
+
+
 
 
 
