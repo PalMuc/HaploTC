@@ -35,7 +35,7 @@ Open conda environment:
   --output uce-search-results \
 	--min-identity 85 \
 	--min-coverage 85
-```´
+```
 
 The output of this file can be found back under 'data_insilico_test/phyluce_assembly_match_contigs_to_probes.log'
 
