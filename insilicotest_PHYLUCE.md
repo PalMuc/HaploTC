@@ -1,4 +1,4 @@
-# PHYLUCE: *In-Silico* Test Settings
+# *In-Silico* Test Settings
 
 Settings used for the programs and python script used for the MSDA in-silico test following the online tutorial (I) of PHYLUCE: https://phyluce.readthedocs.io/en/latest/tutorials/tutorial-1.html#tutorial-i-uce-phylogenomics (Faircloth, 2012; Faircloth et al., 2016)
 
