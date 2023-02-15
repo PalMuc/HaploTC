@@ -3,7 +3,7 @@
 For the Maximum Likelihood phylogeny, we used RAxML (Stamatakis, 2014)
 
 ```python
-./raxmlHPC-PTHREADS-AVX2 -m GTRGAMMAX -p 1505 -s 'redsea-complete'INPUT.phylip -n OUTPUT -f a -x 3012 -T 16 -# 1000
+./raxmlHPC-PTHREADS-AVX2 -m GTRGAMMAX -p 1505 -s INPUT.phylip -n OUTPUT -f a -x 3012 -T 16 -# 1000
 ```
 
 phylip files can be found in the *data_insilico_test*  and *data_invitro_test* folders.
