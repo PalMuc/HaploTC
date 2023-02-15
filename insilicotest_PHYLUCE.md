@@ -19,8 +19,12 @@ Open conda environment:
 > cd in-silico-test
 ```
 
-* in the folder we stored the bait-set (Supplementary Information III): 'uce-20k-probes.fasta'
+* In this in-silico-test folder we also load the bait-set (Supplementary Information III): 'uce-20k-probes.fasta'
+* We create a separate folder called 'fastas'. This is where we store all the assemblies. The assemblies are stored in the data_insilico_test/fastas.
 
+```python
+> mkdir fastas
+```´
 
 
 
