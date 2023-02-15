@@ -24,7 +24,7 @@ Open conda environment:
 
 ```python
 > mkdir fastas
-```´
+```
 
 ### FINDING UCE LOCI
 
@@ -50,7 +50,7 @@ AMQU
 CELE
 CVAR
 etc.
-```´
+```
 
 ```python
 > cd in-silico-test
