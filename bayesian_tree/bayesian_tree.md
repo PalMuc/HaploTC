@@ -142,6 +142,22 @@ check_haplos
 output$message_complete
 ```
 
+* More details can be found: https://github.com/lfabreti/convenience
+* For the demosponge tree, we increased the moves on the tree to 9 reach convergence
+
+## Final tree
+
+To create the final bayesian tree we used the following RevBayes script:
+
+```python
+trace = readTreeTrace("output_bayesian_tree_posterior.trees", treetype="non-clock")
+trace.setBurnin(0.25)
+
+# Summarize tree trace and the consensus tree to file
+map_tree = mapTree(trace, file="redsea_bayesian.map.tre")
+con_tree = consensusTree(trace, file="redsea_bayesian.majrule.tre")
+```
+
 
 
 ## References
