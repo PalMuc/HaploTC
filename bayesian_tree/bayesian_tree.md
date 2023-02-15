@@ -1,5 +1,10 @@
 # RevBayes Script
 
+The bayesian trees were computed using RevBayes (Hönha et al. 2016)
+The file should be saved accordingly (.Rev). See below for all the details.
+
+## Reading in the data
+
 Add the path to your file
 
 ```python
@@ -99,8 +104,8 @@ seq.clamp(data)
 
 ## THE Model 
 
-# We define our model.
-# We can use any node of our model as a handle, here we chose to use the rate matrix.
+We define our model.
+##### We can use any node of our model as a handle, here we chose to use the rate matrix.
 
 ```python
 mymodel = model(Q)
@@ -118,3 +123,26 @@ mymcmc.run(generations=200000,tuningInterval=100)
 
 q()
 ```
+
+## Check for convergence
+
+The outcome of this script will result in 4 different trees, which need to be checked for convergence using the following Rscript:
+
+```python
+library(convenience)
+
+check_haplos <- checkConvergence(list_files = c("output_bayesian_tree_posterior_run_1.log", "output_bayesian_tree_posterior_run_1.trees",
+						"output_bayesian_tree_posterior_run_2.log", "output_bayesian_tree_posterior_run_2.trees",
+						"output_bayesian_tree_posterior_run_3.log", "output_bayesian_tree_posterior_run_3.trees",
+						"output_bayesian_tree_posterior_run_4.log", "output_bayesian_tree_posterior_run_4.trees"))
+
+check_haplos
+
+
+output$message_complete
+```
+
+
+
+## References
+Höhna, S., Landis, M. J., Heath, T. A., Boussau, B., Lartillot, N., Moore, B. R., … Ronquist, F. (2016). RevBayes: Bayesian phylogenetic inference using graphical models and an interactive model-specification language. Systematic Biology, 65(4), 726–736. https://doi.org/10.1093/sysbio/syw021
