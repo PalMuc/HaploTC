@@ -22,32 +22,20 @@ Joëlle van der Sprong <sup>1§</sup>; Nicole J. de Voogd <sup>2,3</sup>; Grace 
 ## Description
 This repository includes the following:
 
-* The parameters and settings used for bait design (PHYLUCE Tutorial IV) <sup>a,b</sup>
-* Transcriptomic data (assemblies) used for bait design (assembled using TransPi) <sup>c</sup>
+* The parameters and settings used for bait design (PHYLUCE Tutorial IV)
+* Transcriptomic data (assemblies) used for bait design (assembled using TransPi)
 * The MSDA bait set (20,000 probes): *uce-20k-probes.fasta*
-* Folder with all the information to (re)create the Maximum Likelihood (ML) full length 18S phylogeny using RAxML<sup>d,e</sup>: *18S_Redmond_phylogeny* 
-* The parameters and settings for the in-silico test (PHYLUCE Tutorial I) <sup>a,b</sup>
+* Folder with all the information to (re)create the Maximum Likelihood (ML) full length 18S phylogeny using RAxML: *18S_Redmond_phylogeny* 
+* The parameters and settings for the in-silico test (PHYLUCE Tutorial I)
 * Folder with information and data for in-silico test: *data_insilico_test*
 * Folder with information and data for in-vitro test: *data_invitro_test*
 * Assemblies of the Red Sea haplosclerids: *assemblies_redsea_haplosclerids*
-* The parameters and settings for reconstructing the ML phylogenies using RAxML <sup>d</sup>
-* The parameters and settings for reconstructing the bayesian phylogenies using RevBayes <sup>f</sup>
+* The parameters and settings for reconstructing the ML phylogenies using RAxML
+* The parameters and settings for reconstructing the bayesian phylogenies using RevBayes
 
 ### Citation
 [insert here ...]
 
-### References
-<sup>a</sup> Faircloth, B. C. (2016). PHYLUCE is a software package for the analysis of conserved genomic loci. Bioinformatics, 32(5), 786–788. doi: 10.1093/bioinformatics/btv646
-
-<sup>b</sup> Faircloth, B. C., McCormack, J. E., Crawford, N. G., Harvey, M. G., Brumfield, R. T., & Glenn, T. C. (2012). Ultraconserved elements anchor thousands of genetic markers spanning multiple evolutionary timescales. Systematic Biology, 61(5), 717–726. doi: 10.1093/sysbio/sys004
-
-<sup>c</sup> Rivera-Vicéns, R. E., Garcia Escudero, C., Conci, N., Eitel, M., & Wörheide, G. (2022). TransPi – a comprehensive TRanscriptome ANalysiS PIpeline for de novo transcriptome assembly. Molecular Ecology Resources. doi: 10.1111/1755-0998.13593
-
-<sup>d</sup> Stamatakis, A. (2014). RAxML version 8: A tool for phylogenetic analysis and post-analysis of large phylogenies. Bioinformatics, 30(9), 1312–1313. doi: 10.1093/bioinformatics/btu033
-
-<sup>e</sup> Redmond, N. E., Morrow, C. C., Thacker, R. W., Diaz, M. C., Boury-esnault, N., Cárdenas, P., … Collins, A. G. (2013). Phylogeny and systematics of demospongiae in light of new small-subunit ribosomal DNA (18S) sequences. Integrative and Comparative Biology, 53(3), 388–415. doi:10.1093/icb/ict078
-
-<sup>f</sup> Höhna, S., Landis, M. J., Heath, T. A., Boussau, B., Lartillot, N., Moore, B. R., … Ronquist, F. (2016). RevBayes: Bayesian phylogenetic inference using graphical models and an interactive model-specification language. Systematic Biology, 65(4), 726–736. doi: 10.1093/sysbio/syw021
 
 
 
