@@ -3,6 +3,9 @@
 Settings used for the programs and python script used for the MSDA in-silico test following the online tutorial (I) of PHYLUCE: https://phyluce.readthedocs.io/en/latest/tutorials/tutorial-1.html#tutorial-i-uce-phylogenomics (Faircloth, 2012; Faircloth et al., 2016)
 
 Transcriptome data used for the *in-silico* test can be found back in the folder 'data_insilico_test'.
+Data used for the *in-vitro* test can be found back in the folder 'data_invitro_test'
+
+For simplicity, we give an overview of the steps taken for the *in-silico* test. However, the same approach was used for the *in-vitro* test.
 
 ## Tutorial I: UCE Phylogenomics
 
