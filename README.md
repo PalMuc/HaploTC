@@ -1,6 +1,6 @@
 # Genome-wide Loci Marine Haplosclerids
 
-Joëlle van der Sprong <sup>1§</sup>; Nicole J. de Voogd <sup>2,3</sup>; Grace P. McCormack <sup>4</sup>; Oliver Voigt <sup>1</sup>; Dirk Erpenbeck <sup>1,5</sup>; Gert Wörheide <sup>1,5,6</sup>; Sergio Vargas <sup>1§</sup>
+Joëlle van der Sprong <sup>1§</sup>; Nicole J. de Voogd <sup>2,3</sup>; Grace P. McCormack <sup>4</sup>; Kenneth Sandoval <sup>4</sup>; Simone Schätzle <sup>1</sup>; Oliver Voigt <sup>1</sup>; Dirk Erpenbeck <sup>1,5</sup>; Gert Wörheide <sup>1,5,6</sup>; Sergio Vargas <sup>1§</sup>
 
 <sup>1</sup> Department of Earth and Environmental Sciences, Palaeontology and Geobiology, Ludwig-Maximilians-Universität München, Munich, Germany
 
