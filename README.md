@@ -34,8 +34,7 @@ This repository includes the following:
 * The parameters and settings for reconstructing the bayesian phylogenies using RevBayes
 
 ### Citation
-[insert here ...]
-
+van der Sprong, J., de Voogd, N.J., McCormack, G.P., Sandoval, K., Schätzle, S., Voigt, O., Erpenbeck, D., Wörheide, G. and Vargas, S., 2024. A novel target‐enriched multilocus assay for sponges (Porifera): Red Sea Haplosclerida (Demospongiae) as a test case. Molecular Ecology Resources, 24(2), p.e13891.
 
 
 
